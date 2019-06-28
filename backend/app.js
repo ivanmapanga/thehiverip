@@ -15,13 +15,6 @@ app.use(
 
 const profilesRoutes = require("./routes/profiles");
 
-const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "projectdb"
-});
-
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(

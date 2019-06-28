@@ -1,17 +1,23 @@
 const express = require("express");
 const router = express.Router();
-const app = require("../app");
+
+const connection = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "projectdb"
+});
 
 router.post("", (req, res) => {
   const data = JSON.parse(req.body.data);
-  app.connection.connect(function() {
+  connection.connect(() => {
     var query =
       "INSERT into 'profile' (name, surname) VALUES('" +
       data.name +
       "', '" +
       data.surname +
       "')";
-    app.connection.query(query, function(err, result, field) {
+    connection.query(query, (err, result, field) => {
       if (err) {
         return res.status(500).send(err);
       } else {
