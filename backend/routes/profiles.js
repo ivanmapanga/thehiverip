@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const app = require("../app")
+const app = require("../app");
 
 router.post("", (req, res) => {
   const data = JSON.parse(req.body.data);
@@ -24,3 +24,5 @@ router.post("", (req, res) => {
     });
   });
 });
+
+module.exports = router;

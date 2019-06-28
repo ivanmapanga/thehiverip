@@ -1,7 +1,7 @@
 const express = require("express");
 const mysql = require("mysql");
 const bodyParser = require("body-parser");
-const cors = require("cors")
+const cors = require("cors");
 
 const app = express();
 
@@ -12,6 +12,8 @@ app.use(
     extended: false
   })
 );
+
+const profilesRoutes = require("./routes/profiles");
 
 const connection = mysql.createConnection({
   host: "localhost",
@@ -32,6 +34,8 @@ app.use((req, res, next) => {
   );
   next();
 });
+
+app.use("/api/profiles", profilesRoutes);
 
 module.exports = app;
 
