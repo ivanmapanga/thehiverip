@@ -19,7 +19,7 @@ export class HomePage {
 
   SaveUserData() {
     const dataToSend = { name: "Bee ", surname: "CK" };
-    const url = "http://localhost:5000/api/profile/";
+    const url = "http://localhost:5000/api/profiles/";
     this.http
       .post(
         url,
