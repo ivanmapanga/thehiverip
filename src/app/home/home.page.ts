@@ -9,6 +9,7 @@ import { Platform } from "@ionic/angular";
   templateUrl: "home.page.html",
   styleUrls: ["home.page.scss"]
 })
+
 export class HomePage {
   constructor(public http: HttpClient, public platform: Platform) {
     this.platform.ready().then(() => {
@@ -18,7 +19,7 @@ export class HomePage {
 
   SaveUserData() {
     const dataToSend = { name: "Bee ", surname: "CK" };
-    const url = "http://localhost:8083/profile/";
+    const url = "http://localhost:5000/profile/";
     this.http
       .post(
         url,
