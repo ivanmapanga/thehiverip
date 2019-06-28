@@ -13,11 +13,11 @@ router.post("", (req, res) => {
   const data = JSON.parse(req.body.data);
   connection.connect(() => {
     var query =
-      "INSERT into 'profile' (name, surname) VALUES('" +
+      "insert into profile (name, surname) values ('" +
       data.name +
       "', '" +
       data.surname +
-      "')";
+      "');";
     connection.query(query, (err, result, field) => {
       if (err) {
         return res.status(500).send(err);
