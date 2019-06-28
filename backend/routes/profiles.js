@@ -4,7 +4,7 @@ const app = require("../app");
 
 router.post("", (req, res) => {
   const data = JSON.parse(req.body.data);
-  app.connection.connnect(function() {
+  app.connection.connect(function() {
     var query =
       "INSERT into 'profile' (name, surname) VALUES('" +
       data.name +
